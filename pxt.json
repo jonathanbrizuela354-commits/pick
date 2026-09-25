@@ -4,7 +4,9 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "multiplayer": "*"
+        "multiplayer": "*",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2"
     },
     "files": [
         "main.blocks",
@@ -13,7 +15,9 @@
         "assets.json",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        "tutorial-info-cache.json"
+        "tutorial-info-cache.json",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"

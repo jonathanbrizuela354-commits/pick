@@ -2,92 +2,11 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     game.setGameOverMessage(false, "GAME OVER!")
 })
 let mySprite2 = 0
-mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . f . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . f f f f f . . . . 
-    . . . . f f f 1 1 1 1 1 f . . . 
-    . . f f f 1 1 1 1 f 1 1 f f . . 
-    . . f 1 1 1 1 1 1 1 1 1 f f . . 
-    . f f 1 1 1 1 1 1 1 1 1 f f . . 
-    . f 1 1 1 f f f 1 1 f f f . . . 
-    . f f 1 1 f . f 1 1 f . . . . . 
-    . . f 1 1 f . f 1 1 f . . . . . 
-    . . f 1 1 f . f 1 1 f . . . . . 
-    . . f 1 1 f . f 1 1 f . . . . . 
-    . . f 1 1 f . f 1 1 f . . . . . 
-    `, SpriteKind.Player))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three))
-mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four), sprites.create(img`
-    . . . . . . . . . . b 5 b . . . 
-    . . . . . . . . . b 5 b . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 5 5 5 5 5 b . . . 
-    . . . . b b 5 1 f f 5 d 4 c . . 
-    . . . . b 5 5 1 f f d d 4 4 4 b 
-    . . . . b 5 5 1 f f 4 4 4 4 b . 
-    . . . b d 5 5 5 5 4 4 4 4 b . . 
-    . . b d d 5 5 5 5 5 5 5 7 b . . 
-    . b d d d d 5 5 5 5 5 5 5 7 b . 
-    b d d d b b b 5 5 5 5 5 5 7 b . 
-    c d d b 5 5 d c 5 5 5 5 5 7 b . 
-    c b b d 5 d c d 5 5 5 5 7 7 b . 
-    . b 5 5 b c d d 5 5 5 7 7 d b . 
-    b b c c c d d d d 5 5 7 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.Player))
-mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`
-    ............777777777...
-    ...........7777777777...
-    ..........77777.........
-    ..........7777..........
-    ....4444ffff444ffff444..
-    ....44fffffff4fffffff44.
-    ...44ffffffff4fffffff44.
-    ...4fffffffff4ff111ff44.
-    ...4fff111fff4ff111ff44.
-    ..44fff111fff4ff111ff44.
-    ..44fff111fff4fffffff44.
-    .444fffffffff4fffffff44.
-    .4444fffffff44ffffff444.
-    .4444ffffff4444ffff4444.
-    .444444fff444444444444..
-    .444444444444444444444..
-    .444411111111111444444..
-    .44441111111111144444...
-    ..44411111111111444.....
-    ...444444444444444......
-    ....444444444444........
-    .......4444444..........
-    ........................
-    ........................
-    `, SpriteKind.Player))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Four))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
-mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`
-    . . . . c c c c c c . . . . . . 
-    . . . c 6 7 7 7 7 6 c . . . . . 
-    . . c 7 7 7 7 7 7 7 7 c . . . . 
-    . c 6 7 f 7 7 7 f 7 7 6 c . . . 
-    . c 7 7 f 7 7 7 f 7 7 7 c . . . 
-    . f 7 7 7 7 7 7 7 7 7 7 f . . . 
-    . f 7 7 7 7 7 7 7 7 7 7 f . . . 
-    . . f 7 7 7 7 6 c 7 7 6 f c . . 
-    . . . f c c c c 7 7 6 f 7 7 c . 
-    . . c 7 2 7 7 7 6 c f 7 7 7 7 c 
-    . c 7 7 2 7 7 c f c 6 7 7 6 c c 
-    c 1 1 1 1 7 6 f c c 6 6 6 c . . 
-    f 1 1 1 1 1 6 6 c 6 6 6 6 f . . 
-    f 6 1 1 1 1 1 6 6 6 6 6 c f . . 
-    . f 6 1 1 1 1 1 1 6 6 6 f . . . 
-    . . c c c c c c c c c f . . . . 
-    `, SpriteKind.Player))
 scene.setBackgroundColor(15)
+let statusbar = statusbars.create(20, 4, StatusBarKind.Health)
+blockSettings.writeNumber("12", mySprite2)
+statusbar.value = statusbar.max
+statusbar.value += 0
 scene.setBackgroundImage(img`
     6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
     6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
@@ -211,3 +130,89 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
 music.play(music.createSong(hex`0078000408070500001c00010a006400f401640000040000000000000000000000000005000004060000000400012405001c000f0a006400f4010a00000400000000000000000000000000000000028f0008000c000220250c001000011b1000140002192914001800012418001c00021b2a1c002000012420002400021e2724002800021d2a28002c0001252c00300002191d30003400041e22242c34003800031b1d2438003c00041d24292c3c004000021b2544004800011948004c00012050005400012754005800012c5c006000021e2c60006400011d6400680002202506001c00010a006400f40164000004000000000000000000000000000000000207005400580002202407001c00020a006400f401640000040000000000000000000000000000000003060058005c00012708001c000e050046006603320000040a002d00000064001400013200020100022c0044004800011e48004c00012a4c00500002222950005400012c5c00600002222764006800011b68006c000129`), music.PlaybackMode.InBackground)
+mySprite2 = 0
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Three), sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . f . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f f f f . . . . 
+    . . . . f f f 1 1 1 1 1 f . . . 
+    . . f f f 1 1 1 1 f 1 1 f f . . 
+    . . f 1 1 1 1 1 1 1 1 1 f f . . 
+    . f f 1 1 1 1 1 1 1 1 1 f f . . 
+    . f 1 1 1 f f f 1 1 f f f . . . 
+    . f f 1 1 f . f 1 1 f . . . . . 
+    . . f 1 1 f . f 1 1 f . . . . . 
+    . . f 1 1 f . f 1 1 f . . . . . 
+    . . f 1 1 f . f 1 1 f . . . . . 
+    . . f 1 1 f . f 1 1 f . . . . . 
+    `, SpriteKind.Player))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three))
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four), sprites.create(img`
+    . . . . . . . . . . b 5 b . . . 
+    . . . . . . . . . b 5 b . . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . . . . b b 5 1 f f 5 d 4 c . . 
+    . . . . b 5 5 1 f f d d 4 4 4 b 
+    . . . . b 5 5 1 f f 4 4 4 4 b . 
+    . . . b d 5 5 5 5 4 4 4 4 b . . 
+    . . b d d 5 5 5 5 5 5 5 7 b . . 
+    . b d d d d 5 5 5 5 5 5 5 7 b . 
+    b d d d b b b 5 5 5 5 5 5 7 b . 
+    c d d b 5 5 d c 5 5 5 5 5 7 b . 
+    c b b d 5 d c d 5 5 5 5 7 7 b . 
+    . b 5 5 b c d d 5 5 5 7 7 d b . 
+    b b c c c d d d d 5 5 7 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.Player))
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`
+    ............777777777...
+    ...........7777777777...
+    ..........77777.........
+    ..........7777..........
+    ....4444ffff444ffff444..
+    ....44fffffff4fffffff44.
+    ...44ffffffff4fffffff44.
+    ...4fffffffff4ff111ff44.
+    ...4fff111fff4ff111ff44.
+    ..44fff111fff4ff111ff44.
+    ..44fff111fff4fffffff44.
+    .444fffffffff4fffffff44.
+    .4444fffffff44ffffff444.
+    .4444ffffff4444ffff4444.
+    .444444fff444444444444..
+    .444444444444444444444..
+    .444411111111111444444..
+    .44441111111111144444...
+    ..44411111111111444.....
+    ...444444444444444......
+    ....444444444444........
+    .......4444444..........
+    ........................
+    ........................
+    `, SpriteKind.Player))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Four))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`
+    . . . . c c c c c c . . . . . . 
+    . . . c 6 7 7 7 7 6 c . . . . . 
+    . . c 7 7 7 7 7 7 7 7 c . . . . 
+    . c 6 7 f 7 7 7 f 7 7 6 c . . . 
+    . c 7 7 f 7 7 7 f 7 7 7 c . . . 
+    . f 7 7 7 7 7 7 7 7 7 7 f . . . 
+    . f 7 7 7 7 7 7 7 7 7 7 f . . . 
+    . . f 7 7 7 7 6 c 7 7 6 f c . . 
+    . . . f c c c c 7 7 6 f 7 7 c . 
+    . . c 7 2 7 7 7 6 c f 7 7 7 7 c 
+    . c 7 7 2 7 7 c f c 6 7 7 6 c c 
+    c 1 1 1 1 7 6 f c c 6 6 6 c . . 
+    f 1 1 1 1 1 6 6 c 6 6 6 6 f . . 
+    f 6 1 1 1 1 1 6 6 6 6 6 c f . . 
+    . f 6 1 1 1 1 1 1 6 6 6 f . . . 
+    . . c c c c c c c c c f . . . . 
+    `, SpriteKind.Player))
